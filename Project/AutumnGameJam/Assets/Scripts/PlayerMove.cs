@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
     private Collider _collider;
     [SerializeField] private float _speedModifier;
     [SerializeField] private float _jumpModifier;
-    private float _MAX_SPEED = 5f;
+    [SerializeField] private float _MAX_SPEED = 5f;
     private bool _grounded = false;
     private bool _canJump = true;
     private Vector3 _playerInput;
@@ -46,9 +46,10 @@ public class PlayerMove : MonoBehaviour
         if(!_grounded) return;
         //player let go and therefore should slow down
         if(_playerInput == Vector3.zero){
-            _rigidbody.velocity = _rigidbody.velocity/2;
             if(_rigidbody.velocity.magnitude <= 1){
                 _rigidbody.velocity = Vector3.zero;
+            }else{
+                _rigidbody.velocity = _rigidbody.velocity/1.1f;
             }
         }
         //Picking up speed
@@ -64,7 +65,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     IEnumerator resetCanJump(){
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         _canJump = true;
     }
 }
