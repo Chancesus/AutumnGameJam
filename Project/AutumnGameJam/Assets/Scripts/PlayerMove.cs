@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
+        Physics.gravity = new Vector3(0, -15.0f, 0);
     }
 
     // Update is called once per frame
@@ -43,7 +44,12 @@ public class PlayerMove : MonoBehaviour
                 _grounded = true;
             }
         }
-        if(!_grounded) return;
+        if(_grounded) _rigidbody.useGravity = false;
+        if(!_grounded) 
+        {
+            _rigidbody.useGravity = true;
+            return;
+        }
         //player let go and therefore should slow down
         if(_playerInput == Vector3.zero){
             if(_rigidbody.velocity.magnitude <= 1){
@@ -58,9 +64,7 @@ public class PlayerMove : MonoBehaviour
         }
         //At MAX speed
         if(_rigidbody.velocity.magnitude >= _MAX_SPEED){
-            if((_rigidbody.velocity + transform.TransformDirection(_playerInput).normalized*_speedModifier).magnitude < _MAX_SPEED){
-                _rigidbody.AddForce(transform.TransformDirection(_playerInput).normalized * _speedModifier, ForceMode.VelocityChange);
-            }
+            _rigidbody.velocity = transform.TransformDirection(_playerInput).normalized*_MAX_SPEED;
         }
     }
 
