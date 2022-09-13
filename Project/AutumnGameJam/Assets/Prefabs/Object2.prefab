@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2691111431259964480}
   - component: {fileID: 1548028034254978555}
   - component: {fileID: 8960340135599723118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,4 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnLocations:
-  - {fileID: 6318539252858053486}
+  - _position: {x: 0, y: 0, z: 0}
+    _rotation: {x: 0, y: 0, z: 0}
