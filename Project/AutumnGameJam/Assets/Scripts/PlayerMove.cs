@@ -12,13 +12,18 @@ public class PlayerMove : MonoBehaviour
     private bool _grounded = false;
     private bool _canJump = true;
     private Vector3 _playerInput;
+    private Camera _camera;
+    private RaycastHit _lookingAtObject;
+    private Renderer _renderer;
     [SerializeField] LayerMask _groundMask;
+    [SerializeField] LayerMask _gatherableMask;
 
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
+        _camera = GetComponentInChildren<Camera>();
         Physics.gravity = new Vector3(0, -15.0f, 0);
     }
 
@@ -33,9 +38,22 @@ public class PlayerMove : MonoBehaviour
             _grounded = false;
             StartCoroutine(resetCanJump());
         }
+
+        if(Input.GetButtonDown("Fire1")){
+            Gatherable obj;
+            if(_lookingAtObject.collider.TryGetComponent<Gatherable>(out obj)){
+                obj.PlayerFoundObject();
+            }
+        }
+        
     }
 
     void FixedUpdate(){
+        playerMove();
+        playerLookingAt();
+    }
+
+    private void playerMove(){
         if(_canJump){
 
             Debug.DrawRay(transform.position, Vector3.down*1.5f);
@@ -66,6 +84,22 @@ public class PlayerMove : MonoBehaviour
         if(_rigidbody.velocity.magnitude >= _MAX_SPEED){
             _rigidbody.velocity = transform.TransformDirection(_playerInput).normalized*_MAX_SPEED;
         }
+    }
+    private void playerLookingAt(){
+        Debug.DrawRay(_camera.transform.position, Vector3.left * 10, Color.magenta, 1);
+        if(Physics.Raycast(_camera.transform.position, Vector3.left, out _lookingAtObject, 10, _gatherableMask)){
+            _renderer = new Renderer();
+            if(_lookingAtObject.collider.TryGetComponent<Renderer>(out _renderer)){
+                _renderer.material.EnableKeyword("_EMISSION");
+            }
+        }else{
+            if(_renderer != null){
+                _renderer.material.DisableKeyword("_EMISSION");
+                _lookingAtObject = new RaycastHit();
+                _renderer = null;
+            }
+        }
+
     }
 
     IEnumerator resetCanJump(){
