@@ -88,7 +88,6 @@ public class PlayerMove : MonoBehaviour
         }
     }
     private void UpdateLookingAt(){
-        
         Debug.DrawRay(_camera.transform.position, _camera.transform.forward * 10, Color.magenta, 1);
         if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _lookingAtObject, 10, _gatherableMask)){
             Renderer _renderer;
@@ -106,7 +105,6 @@ public class PlayerMove : MonoBehaviour
                 _mat = null;
             }
         }
-
     }
 
     IEnumerator resetCanJump(){
