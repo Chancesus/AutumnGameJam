@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate(){
         playerMove();
-        playerLookingAt();
+        UpdateLookingAt();
     }
 
     private void playerMove(){
@@ -87,7 +87,7 @@ public class PlayerMove : MonoBehaviour
             _rigidbody.velocity = transform.TransformDirection(_playerInput).normalized*_MAX_SPEED;
         }
     }
-    private void playerLookingAt(){
+    private void UpdateLookingAt(){
         
         Debug.DrawRay(_camera.transform.position, _camera.transform.forward * 10, Color.magenta, 1);
         if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _lookingAtObject, 10, _gatherableMask)){
