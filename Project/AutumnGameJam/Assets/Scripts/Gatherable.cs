@@ -16,12 +16,20 @@ public class Gatherable : MonoBehaviour
             _position = Vector3.zero;
             _rotation = Vector3.zero;
         }
+        public Vector3 GetPosition(){
+            //print(_position);
+            return _position;
+        }
+        public Vector3 GetRotation(){
+            //print(_rotation);
+            return _rotation;
+        }
     }
 
     [SerializeField] private List<LocationData> _spawnLocations;
     public static System.Action<Gatherable> onFound;
 
-    void Start(){
+    public void Init(){
         onFound += OnFoundCallback;
     }
     public LocationData PickRandomSpawn(){
@@ -31,6 +39,7 @@ public class Gatherable : MonoBehaviour
         }
         
         int index = Mathf.FloorToInt(Random.Range(0, _spawnLocations.Count));
+
         return _spawnLocations[index];
     }
 

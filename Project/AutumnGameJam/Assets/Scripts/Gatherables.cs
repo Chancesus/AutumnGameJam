@@ -21,8 +21,16 @@ public class Gatherables : MonoBehaviour
             GameObject.Instantiate(obj);
             Gatherable current;
             if(obj.TryGetComponent<Gatherable>(out current)){
-                current.PickRandomSpawn();
+                current.Init();
+                Gatherable.LocationData spawnPoint = current.PickRandomSpawn();
+                
+                current.transform.position = spawnPoint.GetPosition();
+                current.transform.eulerAngles = spawnPoint.GetRotation();
+                print($"Picked spawn for {current.name}");
+            }else{
+                print("Couldn't get component 'Gatherable'");
             }
+            
         }
     }
 

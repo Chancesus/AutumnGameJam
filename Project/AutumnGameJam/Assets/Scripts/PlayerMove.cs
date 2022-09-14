@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     private Vector3 _playerInput;
     private Camera _camera;
     private RaycastHit _lookingAtObject;
-    private Renderer _renderer;
+    Material _mat;
     [SerializeField] LayerMask _groundMask;
     [SerializeField] LayerMask _gatherableMask;
 
@@ -40,9 +40,11 @@ public class PlayerMove : MonoBehaviour
         }
 
         if(Input.GetButtonDown("Fire1")){
-            Gatherable obj;
-            if(_lookingAtObject.collider.TryGetComponent<Gatherable>(out obj)){
-                obj.PlayerFoundObject();
+            if(_lookingAtObject.collider != null){
+                Gatherable obj;
+                if(_lookingAtObject.collider.TryGetComponent<Gatherable>(out obj)){
+                    obj.PlayerFoundObject();
+                }
             }
         }
         
@@ -86,17 +88,22 @@ public class PlayerMove : MonoBehaviour
         }
     }
     private void playerLookingAt(){
-        Debug.DrawRay(_camera.transform.position, Vector3.left * 10, Color.magenta, 1);
-        if(Physics.Raycast(_camera.transform.position, Vector3.left, out _lookingAtObject, 10, _gatherableMask)){
-            _renderer = new Renderer();
+        
+        Debug.DrawRay(_camera.transform.position, _camera.transform.forward * 10, Color.magenta, 1);
+        if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _lookingAtObject, 10, _gatherableMask)){
+            Renderer _renderer;
             if(_lookingAtObject.collider.TryGetComponent<Renderer>(out _renderer)){
-                _renderer.material.EnableKeyword("_EMISSION");
+                _mat = _renderer.material;
+                _mat.SetColor("_EmissionColor", Color.green);
+                _mat.EnableKeyword("_EMISSION");
             }
         }else{
-            if(_renderer != null){
-                _renderer.material.DisableKeyword("_EMISSION");
+            if(_mat != null){
+                
+                _mat.SetColor("_EmissionColor", Color.black);
+                _mat.EnableKeyword("_EMISSION");
                 _lookingAtObject = new RaycastHit();
-                _renderer = null;
+                _mat = null;
             }
         }
 
