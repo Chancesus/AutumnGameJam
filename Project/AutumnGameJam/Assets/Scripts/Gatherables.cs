@@ -10,7 +10,7 @@ public class Gatherables : MonoBehaviour
     private void Awake(){
         _foundGatherables = new List<Gatherable>();
         Gatherable.onFound += FoundGatherable;
-        GetRemainingGatherables();
+        //GetRemainingGatherables();
     }
     void Start(){
         SpawnGatherables();
