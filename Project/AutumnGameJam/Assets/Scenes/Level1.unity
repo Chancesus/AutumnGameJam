@@ -16260,8 +16260,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gatherables:
-  - {fileID: 3644993902077563008, guid: 2853b79d74840d14a8fa3ebcdffbdfe7, type: 3}
-  - {fileID: 6489177821959728737, guid: bf9426407cfd8414ea6ec7c52fda86bb, type: 3}
+  - {fileID: 984026947748621685, guid: 5283476ab2abc974a9a56ae5341a2f83, type: 3}
+  - {fileID: 9027153262348564403, guid: 0d012161d2e94ea48b8c050440c436d8, type: 3}
+  - {fileID: 2583306624820724053, guid: d3e58585a78c9ad458d85f055dcc9ebd, type: 3}
+  - {fileID: 2170695127276823831, guid: d407357bbf6ebfe4c915dd9d38dbc445, type: 3}
+  - {fileID: 4259942141642997163, guid: 00879c6aa1cc54945a2934a6adbadd72, type: 3}
   _endGameCanvas: {fileID: 1486040929}
 --- !u!4 &1017513425
 Transform:
