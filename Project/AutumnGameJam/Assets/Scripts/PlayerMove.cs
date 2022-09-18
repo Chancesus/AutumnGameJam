@@ -9,12 +9,14 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _speedModifier;
     [SerializeField] private float _jumpModifier;
     [SerializeField] private float _MAX_SPEED;
+    [SerializeField] private Gatherables _gatherables;
     private bool _grounded = false;
     private bool _canJump = true;
     private Vector3 _playerInput;
     private Camera _camera;
     private RaycastHit _lookingAtObject;
     Material _mat;
+    
     [SerializeField] LayerMask _groundMask;
     [SerializeField] LayerMask _gatherableMask;
 
@@ -56,6 +58,10 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(_gatherables.IsGameOver()){
+            _rigidbody.velocity = Vector3.zero;
+            return;
+        }
         playerMove();
         UpdateLookingAt();
     }
