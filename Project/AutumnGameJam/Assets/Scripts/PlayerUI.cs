@@ -21,4 +21,6 @@ public class PlayerUI : MonoBehaviour
     {
         _foundTextField.text = "Remaining: " +  _gameManagerGatherables.GetRemainingGatherables();
     }
+
+    
 }

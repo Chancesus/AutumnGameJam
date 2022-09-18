@@ -36,6 +36,8 @@ public class Gatherables : MonoBehaviour
 
     public int GetRemainingGatherables(){
         //print(_gatherables.Capacity);
+        //Need to access count to prompt end screen
+
         return _gatherables.Count - _foundGatherables.Count;
     }
     private void FoundGatherable(Gatherable _self){

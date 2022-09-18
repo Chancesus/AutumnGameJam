@@ -31,8 +31,14 @@ public class LevelManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level1");
         AudioManager.Instance.PlayMusic(levelMusic);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        AudioManager.Instance.PlayMusic(menuMusic);
     }
 
     public void QuitGame()
