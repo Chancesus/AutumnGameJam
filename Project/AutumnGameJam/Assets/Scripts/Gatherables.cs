@@ -5,7 +5,10 @@ using UnityEngine;
 public class Gatherables : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _gatherables;
+    [SerializeField] private GameObject _endGameCanvas;
     private List<Gatherable> _foundGatherables;
+    private bool _gameOver;
+    public System.Action onGameOver;
     
     private void Awake(){
         _foundGatherables = new List<Gatherable>();
@@ -13,6 +16,9 @@ public class Gatherables : MonoBehaviour
         //GetRemainingGatherables();
     }
     void Start(){
+        _endGameCanvas.SetActive(false);
+        onGameOver += GameOverCallback;
+        _gameOver = false;
         SpawnGatherables();
     }
     
@@ -40,7 +46,17 @@ public class Gatherables : MonoBehaviour
 
         return _gatherables.Count - _foundGatherables.Count;
     }
+    public bool IsGameOver(){
+        return _gameOver;
+    }
     private void FoundGatherable(Gatherable _self){
         _foundGatherables.Add(_self);
+        if(GetRemainingGatherables() <= 0){
+            onGameOver?.Invoke();
+        }
+    }
+    private void GameOverCallback(){
+        _endGameCanvas.SetActive(true);
+        _gameOver = true;
     }
 }

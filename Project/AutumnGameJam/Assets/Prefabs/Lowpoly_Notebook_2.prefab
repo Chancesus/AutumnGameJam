@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6125594222604463253
+--- !u!1 &2583306624820724053
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6794150427105850927}
-  - component: {fileID: 7630910057063479690}
-  - component: {fileID: 5621203777670974784}
-  - component: {fileID: 2398889910996943550}
-  m_Layer: 0
-  m_Name: RectangleTable
+  - component: {fileID: 2923521277067664367}
+  - component: {fileID: 2251153893199516746}
+  - component: {fileID: 4096379827999072384}
+  - component: {fileID: 1421207384672693243}
+  - component: {fileID: 1425344186475031792}
+  m_Layer: 8
+  m_Name: Lowpoly_Notebook_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6794150427105850927
+--- !u!4 &2923521277067664367
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125594222604463253}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 2583306624820724053}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: -13.389, y: 22.547, z: -22.28}
+  m_LocalScale: {x: 0.3636, y: 0.3636, z: 0.3636}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7630910057063479690
+--- !u!33 &2251153893199516746
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125594222604463253}
-  m_Mesh: {fileID: -4373643612177862487, guid: af03a12e181f89893bcda8c4de3317b5, type: 3}
---- !u!23 &5621203777670974784
+  m_GameObject: {fileID: 2583306624820724053}
+  m_Mesh: {fileID: -8594341164844923268, guid: c8d8b1b8c19d1284090bfb928064ea3c, type: 3}
+--- !u!23 &4096379827999072384
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125594222604463253}
+  m_GameObject: {fileID: 2583306624820724053}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7525278315824536823, guid: af03a12e181f89893bcda8c4de3317b5, type: 3}
+  - {fileID: 2100000, guid: ced80441bd683c74ca07f63aaa8d3397, type: 2}
+  - {fileID: 2100000, guid: 99f5947cd20053b4d9c5a63821a57db3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,16 +86,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2398889910996943550
+--- !u!65 &1421207384672693243
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6125594222604463253}
+  m_GameObject: {fileID: 2583306624820724053}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.51, y: 0.59, z: 0.9}
-  m_Center: {x: 0, y: -0.027527213, z: -0.00000166893}
+  m_Size: {x: 2.288938, y: 2.343308, z: 3.2726586}
+  m_Center: {x: 1.0466704, y: 1.0181811, z: 0.0013600588}
+--- !u!114 &1425344186475031792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583306624820724053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c57457af4d2bc84097e93f7bbcfef52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnLocations:
+  - _position: {x: 32.75421, y: 24.550098, z: -33.14516}
+    _rotation: {x: 0, y: 90, z: 0}
+  - _position: {x: 36.67, y: 24.806, z: -38.768}
+    _rotation: {x: 0, y: -90, z: 0}
+  - _position: {x: 4.84, y: 23.5, z: -21.37}
+    _rotation: {x: 0, y: 90, z: 0}
+  - _position: {x: -13.389, y: 22.547, z: -22.28}
+    _rotation: {x: 0, y: 180, z: 0}
+  - _position: {x: -17.09, y: 21.15, z: -36.58}
+    _rotation: {x: 0, y: 0, z: 0}

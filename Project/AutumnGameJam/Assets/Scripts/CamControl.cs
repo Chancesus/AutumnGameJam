@@ -9,6 +9,7 @@ public class CamControl : MonoBehaviour
     [SerializeField] private float _mouseSensitivity = 1;
     [SerializeField] private float _MAX_Y_ROTATION;
     [SerializeField] private float _MIN_Y_ROTATION;
+    [SerializeField] private Gatherables _gatherables;
     private Camera _playerCam;
     private bool _escToggle;
 
@@ -22,6 +23,7 @@ public class CamControl : MonoBehaviour
         rotationAmountY = 0;
         _escToggle = false;
         _escPressed += EscPressedCallback;
+        _gatherables.onGameOver += FreeMouse;
 
         _playerCam = GetComponentInChildren<Camera>();
     }
@@ -36,6 +38,7 @@ public class CamControl : MonoBehaviour
         rotationAmountX = Input.GetAxisRaw("Mouse X");
         rotationAmountY =  Input.GetAxisRaw("Mouse Y");
 
+        if(_gatherables.IsGameOver()) return;
         transform.Rotate(new Vector3(0, rotationAmountX, 0));
         float currentRotationY = _playerCam.transform.localEulerAngles.x;
 
@@ -68,7 +71,7 @@ public class CamControl : MonoBehaviour
         }
     }
 
-    void EscPressedCallback()
+    private void EscPressedCallback()
     {
         if(_escToggle){
             Cursor.lockState = CursorLockMode.Locked;
@@ -79,5 +82,10 @@ public class CamControl : MonoBehaviour
             Cursor.visible = true;
             _escToggle = true;
         }
+    }
+    private void FreeMouse(){
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _escToggle = true;
     }
 }
