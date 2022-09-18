@@ -52,6 +52,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _GlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -84,6 +88,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ShadowOffset:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecColorGloss:
         m_Texture: {fileID: 2800000, guid: c92c8f39af8b6fc48b95b267a0c083a2, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -102,7 +110,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AO: 2.4
     - _AlphaCutoff: 0.5
+    - _BaseLight: 0.35
     - _BumpScale: 1
     - _CustomColorAmount: 0
     - _Cutoff: 0.33
@@ -124,12 +134,15 @@ Material:
     - _MotionRange1: 0.5
     - _MotionSpeed: 2.99
     - _MotionSpeed1: 1
+    - _Occlusion: 7.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SelfIllum: 0.34
     - _SelfIllum1: 0.122
+    - _Shininess: 0.078125
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SquashAmount: 1
     - _SrcBlend: 1
     - _SwitchColumn: 1
     - _SwitchColumn1: 0
@@ -158,4 +171,6 @@ Material:
     - _SpecularColour: {r: 0.31617647, g: 0.19528547, b: 0.19528547, a: 0}
     - _SpecularTone: {r: 1, g: 0, b: 0, a: 0}
     - _SpecularTone1: {r: 0.058823504, g: 0.056660876, b: 0.056660876, a: 0}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

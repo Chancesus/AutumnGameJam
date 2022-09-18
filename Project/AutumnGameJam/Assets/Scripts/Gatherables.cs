@@ -12,11 +12,11 @@ public class Gatherables : MonoBehaviour
     
     private void Awake(){
         _foundGatherables = new List<Gatherable>();
-        Gatherable.onFound += FoundGatherable;
         //GetRemainingGatherables();
     }
     void Start(){
         _endGameCanvas.SetActive(false);
+        Gatherable.onFound += FoundGatherable;
         onGameOver += GameOverCallback;
         _gameOver = false;
         SpawnGatherables();
@@ -36,14 +36,10 @@ public class Gatherables : MonoBehaviour
             }else{
                 print("Couldn't get component 'Gatherable'");
             }
-            
         }
     }
 
     public int GetRemainingGatherables(){
-        //print(_gatherables.Capacity);
-        //Need to access count to prompt end screen
-
         return _gatherables.Count - _foundGatherables.Count;
     }
     public bool IsGameOver(){
@@ -58,5 +54,9 @@ public class Gatherables : MonoBehaviour
     private void GameOverCallback(){
         _endGameCanvas.SetActive(true);
         _gameOver = true;
+    }
+    private void OnDestroy(){
+        Gatherable.onFound -= FoundGatherable;
+        onGameOver -= GameOverCallback;
     }
 }

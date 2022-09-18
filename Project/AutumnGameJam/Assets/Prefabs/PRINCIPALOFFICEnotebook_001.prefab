@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2904387433995708100}
   - component: {fileID: 2297310175866071393}
   - component: {fileID: 4036729565558857131}
-  m_Layer: 0
+  - component: {fileID: 3552019782083734477}
+  - component: {fileID: -1774349167753624380}
+  m_Layer: 8
   m_Name: PRINCIPALOFFICEnotebook_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2523603860717337726}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.162815, y: -2.892826, z: -6.509}
   m_LocalScale: {x: 1.8132, y: 1.8132, z: 1.8132}
   m_ConstrainProportionsScale: 0
@@ -83,3 +85,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3552019782083734477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523603860717337726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c57457af4d2bc84097e93f7bbcfef52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnLocations:
+  - _position: {x: 36.442646, y: 26.096, z: -38.811}
+    _rotation: {x: 75.32, y: 0, z: 0}
+  - _position: {x: 18.742, y: 23.437, z: -24.26}
+    _rotation: {x: 0, y: 270, z: 0}
+  - _position: {x: 6.388, y: 21.398, z: -34.133}
+    _rotation: {x: 307.78, y: 180, z: 0}
+  - _position: {x: -28.544, y: 22.836, z: -36.65}
+    _rotation: {x: 0.499996, y: 130.69998, z: -0.0000000133407205}
+--- !u!65 &-1774349167753624380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523603860717337726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25338256, y: 0.07325722, z: 0.29664275}
+  m_Center: {x: 0.11944984, y: -0.0009642075, z: 0.0013480405}

@@ -95,7 +95,9 @@ GameObject:
   - component: {fileID: 8877811081367847883}
   - component: {fileID: 5520157161742273646}
   - component: {fileID: 7746049491541358756}
-  m_Layer: 0
+  - component: {fileID: 5193374114942002921}
+  - component: {fileID: 3992378609781149438}
+  m_Layer: 8
   m_Name: CAFETERIAcoffemaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8106341378495437169}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -4.686, y: -2.6958275, z: -6.399}
   m_LocalScale: {x: 108.01881, y: 108.0188, z: 108.0188}
   m_ConstrainProportionsScale: 0
@@ -117,7 +119,7 @@ Transform:
   - {fileID: 2671921410484684427}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &5520157161742273646
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -168,3 +170,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5193374114942002921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106341378495437169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0045994218, y: 0.0065818257, z: 0.007418599}
+  m_Center: {x: 0, y: 0.0019664504, z: 0.00084258144}
+--- !u!114 &3992378609781149438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106341378495437169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c57457af4d2bc84097e93f7bbcfef52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnLocations:
+  - _position: {x: 29.063, y: 24.87, z: -33.658}
+    _rotation: {x: 270, y: 0, z: 0}
+  - _position: {x: 37.824, y: 25.023, z: -37.883}
+    _rotation: {x: 270, y: 180, z: 0}
+  - _position: {x: 28.001, y: 24.884, z: -36.424}
+    _rotation: {x: 270.01978, y: 270, z: 0}
+  - _position: {x: -6.75, y: 23.66, z: -38.678}
+    _rotation: {x: 270, y: 180, z: 0}

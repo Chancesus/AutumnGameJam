@@ -88,4 +88,8 @@ public class CamControl : MonoBehaviour
         Cursor.visible = true;
         _escToggle = true;
     }
+    private void OnDestroy(){
+        _escPressed -= EscPressedCallback;
+        _gatherables.onGameOver -= FreeMouse;
+    }
 }
