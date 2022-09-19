@@ -204,3 +204,4 @@ MonoBehaviour:
     _rotation: {x: 270.01978, y: 270, z: 0}
   - _position: {x: -6.75, y: 23.66, z: -38.678}
     _rotation: {x: 270, y: 180, z: 0}
+  foundItemSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}

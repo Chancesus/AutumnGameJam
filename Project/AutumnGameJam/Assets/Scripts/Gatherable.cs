@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gatherable : MonoBehaviour
 {
+   
+
     [System.Serializable]
     public class LocationData{
         [SerializeField]private Vector3 _position;
@@ -27,6 +29,7 @@ public class Gatherable : MonoBehaviour
     }
 
     [SerializeField] private List<LocationData> _spawnLocations;
+    [SerializeField] AudioClip foundItemSFX;
     public static System.Action<Gatherable> onFound;
 
     public void Init(){
@@ -48,6 +51,7 @@ public class Gatherable : MonoBehaviour
     }
 
     private void OnFoundCallback(Gatherable _self){
+        AudioManager.Instance.PlaySFX(foundItemSFX);
         Destroy(_self.gameObject);
     }
     void OnDestroy(){
