@@ -10,8 +10,11 @@ public class CamControl : MonoBehaviour
     [SerializeField] private float _MAX_Y_ROTATION;
     [SerializeField] private float _MIN_Y_ROTATION;
     [SerializeField] private Gatherables _gatherables;
+    private float _crouchOffset;
+    private float _standingOffset;
     private Camera _playerCam;
     private bool _escToggle;
+    private Vector3 velocityY = Vector3.zero; // Velocity toward targetY.
 
     private System.Action _escPressed;
     // Start is called before the first frame update
@@ -21,6 +24,8 @@ public class CamControl : MonoBehaviour
         Cursor.visible = false;
         rotationAmountX = 0;
         rotationAmountY = 0;
+        _crouchOffset = 1.5f;
+        _standingOffset = 3f;
         _escToggle = false;
         _escPressed += EscPressedCallback;
         _gatherables.onGameOver += FreeMouse;
@@ -31,6 +36,17 @@ public class CamControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKey(KeyCode.LeftShift)){
+            _playerCam.transform.localPosition = Vector3.SmoothDamp(_playerCam.transform.localPosition, Vector3.up * _crouchOffset, ref velocityY, 0.1f, 10f);
+            //_playerCam.transform.localPosition =  Vector3.up * _crouchOffset;
+        }else{
+            _playerCam.transform.localPosition = Vector3.SmoothDamp(_playerCam.transform.localPosition, Vector3.up * _standingOffset, ref velocityY, 0.1f, 10f);
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift)){
+            
+            //_playerCam.transform.localPosition =  Vector3.up * _standingOffset;
+        }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             _escPressed?.Invoke();
