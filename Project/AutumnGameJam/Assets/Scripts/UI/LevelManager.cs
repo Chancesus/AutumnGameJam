@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
    
     public void PlayGame()
     {
-        SceneManager.LoadScene("ChancesScene");
+        SceneManager.LoadScene("Level1");
     }
 
     public void BackToMenu()
