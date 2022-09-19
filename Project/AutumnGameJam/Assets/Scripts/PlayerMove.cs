@@ -52,13 +52,13 @@ public class PlayerMove : MonoBehaviour
                     obj.PlayerFoundObject();
                 }
             }
-        }
-        
+        } 
     }
 
     void FixedUpdate()
     {
         if(_gatherables.IsGameOver()){
+            _rigidbody.useGravity = false;
             _rigidbody.velocity = Vector3.zero;
             return;
         }

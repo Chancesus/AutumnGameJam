@@ -12,12 +12,12 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         SetStartText();
-        Gatherable.onFound += UpdateFoundText;
+        _gameManagerGatherables.onRemainingUpdated += UpdateFoundText;
     }
     private void SetStartText(){
        _foundTextField.text = "Remaining: " + _gameManagerGatherables.GetRemainingGatherables();
     }
-    private void UpdateFoundText(Gatherable _gatherable)
+    private void UpdateFoundText()
     {
         _foundTextField.text = "Remaining: " +  _gameManagerGatherables.GetRemainingGatherables();
     }
