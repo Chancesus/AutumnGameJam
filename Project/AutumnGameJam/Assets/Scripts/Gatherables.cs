@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gatherables : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _gatherables;
+    [SerializeField] private PlayerUI _playerUICanvas;
     [SerializeField] private GameObject _endGameCanvas;
     [SerializeField] AudioClip foundItemSFX;
     private List<Gatherable> _foundGatherables;
@@ -28,6 +29,7 @@ public class Gatherables : MonoBehaviour
     private void SpawnGatherables(){
         foreach(GameObject obj in _gatherables){
             GameObject spawned = GameObject.Instantiate(obj);
+            _playerUICanvas.AddItemName(spawned);
             Gatherable current;
             if(spawned.TryGetComponent<Gatherable>(out current)){
                 current.Init();
@@ -54,6 +56,7 @@ public class Gatherables : MonoBehaviour
         //print("remaining: " + GetRemainingGatherables());
         AudioManager.Instance.PlaySFX(foundItemSFX);
         _foundGatherables.Add(_self);
+        _playerUICanvas.RemoveItemText(_self.gameObject);
         onRemainingUpdated?.Invoke();
         if(GetRemainingGatherables() <= 0){
             onGameOver?.Invoke();

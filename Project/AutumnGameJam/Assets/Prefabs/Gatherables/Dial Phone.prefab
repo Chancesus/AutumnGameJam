@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 5120688100318714577}
   - component: {fileID: 2176227372304568353}
   m_Layer: 8
-  m_Name: PRINCIPALOFFICEtelephone
+  m_Name: Dial Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
