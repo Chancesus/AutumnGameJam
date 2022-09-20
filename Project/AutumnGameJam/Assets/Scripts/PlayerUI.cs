@@ -8,6 +8,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private TMP_Text _foundTextField;
 
     [SerializeField] private Gatherables _gameManagerGatherables;
+    [SerializeField] private CanvasGroup _itemPanel;
 
     [SerializeField] private GameObject _itemsList;
     [SerializeField] private GameObject _itemNamePrefab;
@@ -18,7 +19,22 @@ public class PlayerUI : MonoBehaviour
         _remainingItems = new List<TMP_Text>();
         SetStartText();
         _gameManagerGatherables.onRemainingUpdated += UpdateFoundText;
+        _itemPanel.alpha = 0;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            _itemPanel.alpha = 1;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            _itemPanel.alpha = 0;
+        }
+    }
+
     private void SetStartText(){
        _foundTextField.text = "Remaining: " + _gameManagerGatherables.GetRemainingGatherables();
     }
