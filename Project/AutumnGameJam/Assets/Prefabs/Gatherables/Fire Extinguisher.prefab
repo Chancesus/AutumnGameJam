@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1586428922319827013}
   - component: {fileID: 7982960847402693128}
   m_Layer: 8
-  m_Name: fire extinguisher
+  m_Name: Fire Extinguisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
