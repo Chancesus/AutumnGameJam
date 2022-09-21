@@ -17554,6 +17554,7 @@ MonoBehaviour:
   - {fileID: 8106341378495437169, guid: ee29435a6df45114388dacc39ccc1ace, type: 3}
   - {fileID: 3107169359893559875, guid: 9b96762e6c2cc3a4e99474d53fca1b01, type: 3}
   - {fileID: 8654348643332556549, guid: 7dd25d806e383aa4cafc194168278025, type: 3}
+  - {fileID: 8730390873901990782, guid: 9514417aad5f7b14c8376c40e3c2ed6c, type: 3}
   _playerUICanvas: {fileID: 116426186}
   _endGameCanvas: {fileID: 1486040929}
   foundItemSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
