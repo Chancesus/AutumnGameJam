@@ -177,7 +177,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9027153262348564403}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.0066
   m_Height: 0.03
@@ -204,4 +204,3 @@ MonoBehaviour:
     _rotation: {x: 272.02594, y: 219.50002, z: 0.000048299502}
   - _position: {x: 34.706, y: 26.144, z: -38.53}
     _rotation: {x: 0, y: 0, z: 0}
-  foundItemSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}

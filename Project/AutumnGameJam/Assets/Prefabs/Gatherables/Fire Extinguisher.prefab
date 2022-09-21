@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnLocations:
-  - _position: {x: 39.907, y: 21.147, z: -21.021}
+  - _position: {x: 39.659, y: 21.147, z: -21.021}
     _rotation: {x: 270, y: 145, z: 0}
   - _position: {x: 27.839, y: 23.205, z: -37.389}
     _rotation: {x: 270, y: 235, z: 0}
@@ -204,4 +204,3 @@ MonoBehaviour:
     _rotation: {x: 270, y: 235, z: 0}
   - _position: {x: -29.953, y: 21.118, z: -21.33}
     _rotation: {x: 270, y: 325, z: 0}
-  foundItemSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}

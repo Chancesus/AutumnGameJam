@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3107169359893194337}
   - component: {fileID: 3107169359892391489}
   - component: {fileID: 3107169359891293313}
-  - component: {fileID: 8760087990149957033}
   m_Layer: 0
   m_Name: PP_Horse_Cart_Used_02_Wheels
   m_TagString: Untagged
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8760087990149957033
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3107169359893559873}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: bbe5a9d802a37f740b65d9ab3b3956a2, type: 3}
 --- !u!1 &3107169359893559875
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,8 +94,9 @@ GameObject:
   - component: {fileID: 3107169359893194339}
   - component: {fileID: 3107169359892391491}
   - component: {fileID: 3107169359891293315}
-  - component: {fileID: 1488160648231908886}
-  m_Layer: 0
+  - component: {fileID: 8490866241933904892}
+  - component: {fileID: 828126181425485259}
+  m_Layer: 8
   m_Name: Horse Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +110,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3107169359893559875}
-  m_LocalRotation: {x: -0, y: -0, z: 0.12446736, w: 0.9922237}
+  m_LocalRotation: {x: 0, y: 0, z: 0.12446736, w: 0.9922237}
   m_LocalPosition: {x: 15.430223, y: -11.451827, z: 108.36333}
   m_LocalScale: {x: 1.7071002, y: 1.7071002, z: 1.7071}
   m_ConstrainProportionsScale: 0
@@ -183,8 +169,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1488160648231908886
-MeshCollider:
+--- !u!65 &8490866241933904892
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -193,7 +179,27 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: bbe5a9d802a37f740b65d9ab3b3956a2, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 6.625046, y: 1.296471, z: 2.565647}
+  m_Center: {x: -1.2368882, y: 0.11080633, z: -0.004091024}
+--- !u!114 &828126181425485259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107169359893559875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c57457af4d2bc84097e93f7bbcfef52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnLocations:
+  - _position: {x: -19.74, y: 15.71, z: -104.46}
+    _rotation: {x: 0, y: 234.47, z: 14.299995}
+  - _position: {x: -58.3, y: 18.26, z: -56.1}
+    _rotation: {x: 0, y: 71.92999, z: 14.299995}
+  - _position: {x: 109.3, y: 17.34, z: 24.2}
+    _rotation: {x: -0.000000053360854, y: 10.200033, z: 9.499997}
+  - _position: {x: 43.72, y: 15.47, z: 74.4}
+    _rotation: {x: -0.00000021344341, y: 217.68005, z: 9.499997}

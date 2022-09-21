@@ -36,17 +36,6 @@ public class CamControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(Input.GetKey(KeyCode.LeftShift)){
-            _playerCam.transform.localPosition = Vector3.SmoothDamp(_playerCam.transform.localPosition, Vector3.up * _crouchOffset, ref velocityY, 0.1f, 10f);
-            //_playerCam.transform.localPosition =  Vector3.up * _crouchOffset;
-        }else{
-            _playerCam.transform.localPosition = Vector3.SmoothDamp(_playerCam.transform.localPosition, Vector3.up * _standingOffset, ref velocityY, 0.1f, 10f);
-        }
-        if(Input.GetKeyUp(KeyCode.LeftShift)){
-            
-            //_playerCam.transform.localPosition =  Vector3.up * _standingOffset;
-        }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             _escPressed?.Invoke();
@@ -55,6 +44,14 @@ public class CamControl : MonoBehaviour
         rotationAmountY =  Input.GetAxisRaw("Mouse Y");
 
         if(_gatherables.IsGameOver()) return;
+
+        if(Input.GetKey(KeyCode.LeftShift)){
+            _playerCam.transform.localPosition = Vector3.SmoothDamp(_playerCam.transform.localPosition, Vector3.up * _crouchOffset, ref velocityY, 0.1f, 10f);
+            //_playerCam.transform.localPosition =  Vector3.up * _crouchOffset;
+        }else{
+            _playerCam.transform.localPosition = Vector3.SmoothDamp(_playerCam.transform.localPosition, Vector3.up * _standingOffset, ref velocityY, 0.1f, 10f);
+        }
+
         transform.Rotate(new Vector3(0, rotationAmountX, 0));
         float currentRotationY = _playerCam.transform.localEulerAngles.x;
 
