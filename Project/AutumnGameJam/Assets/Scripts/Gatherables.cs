@@ -9,7 +9,7 @@ public class Gatherables : MonoBehaviour
     [SerializeField] private GameObject _endGameCanvas;
     [SerializeField] AudioClip foundItemSFX;
     private List<Gatherable> _foundGatherables;
-    private bool _gameOver;
+    public bool _gameOver;
     public System.Action onGameOver;
     public System.Action onRemainingUpdated;
     
@@ -22,7 +22,7 @@ public class Gatherables : MonoBehaviour
         _endGameCanvas.SetActive(false);
         Gatherable.onFound += FoundGatherable;
         onGameOver += GameOverCallback;
-        _gameOver = false;
+        _gameOver = true;
         SpawnGatherables();
     }
     
@@ -69,5 +69,10 @@ public class Gatherables : MonoBehaviour
     private void OnDestroy(){
         Gatherable.onFound -= FoundGatherable;
         onGameOver -= GameOverCallback;
+    }
+
+    public void SetGameState(bool newState)
+    {
+        _gameOver = newState;
     }
 }

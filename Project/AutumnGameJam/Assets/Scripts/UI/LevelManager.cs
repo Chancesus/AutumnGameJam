@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-   
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Level1");
