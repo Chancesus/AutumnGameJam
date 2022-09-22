@@ -94,7 +94,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984026947748621685}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.07008483, y: 0.14368331, z: 0.0065494603}
@@ -118,6 +118,5 @@ MonoBehaviour:
     _rotation: {x: 270, y: 260.52002, z: 0}
   - _position: {x: 2.028, y: 21.311, z: -24.626}
     _rotation: {x: 26.699442, y: 319.5893, z: 180.5725}
-  - _position: {x: -13.667, y: 22.546, z: -22.14}
+  - _position: {x: -14.333, y: 22.546, z: -22.14}
     _rotation: {x: 89.51101, y: 320.515, z: 357.8351}
-  foundItemSFX: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}

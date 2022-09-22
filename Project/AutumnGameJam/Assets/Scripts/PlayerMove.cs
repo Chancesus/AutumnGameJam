@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
         _camera = GetComponentInChildren<Camera>();
-        Physics.gravity = new Vector3(0, -15.0f, 0);
+        Physics.gravity = new Vector3(0, -20.0f, 0);
     }
 
     // Update is called once per frame
@@ -75,11 +75,15 @@ public class PlayerMove : MonoBehaviour
             {
                 _grounded = true;
             }
+            else{
+                _grounded = false;
+            }
         }
-        if(_grounded) _rigidbody.useGravity = false;
+        //if(_grounded) _rigidbody.useGravity = false;
         if(!_grounded)
         {
-            _rigidbody.useGravity = true;
+            _rigidbody.AddForce(transform.TransformDirection(_playerInput).normalized * _speedModifier, ForceMode.Force);
+            //_rigidbody.useGravity = true;
             return;
         }
         //player let go and therefore should slow down
@@ -107,8 +111,8 @@ public class PlayerMove : MonoBehaviour
     }
     private void UpdateLookingAt()
     {
-        Debug.DrawRay(_camera.transform.position, _camera.transform.forward * 10, Color.magenta, 1);
-        if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _lookingAtObject, 10, _gatherableMask))
+        Debug.DrawRay(_camera.transform.position, _camera.transform.forward * 150, Color.magenta, 1);
+        if(Physics.Raycast(_camera.transform.position, _camera.transform.forward, out _lookingAtObject, 150, _gatherableMask))
         {
             Renderer _renderer;
             if(_lookingAtObject.collider.TryGetComponent<Renderer>(out _renderer))
