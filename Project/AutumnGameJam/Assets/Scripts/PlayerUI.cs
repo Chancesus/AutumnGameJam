@@ -20,6 +20,7 @@ public class PlayerUI : MonoBehaviour
         SetStartText();
         _gameManagerGatherables.onRemainingUpdated += UpdateFoundText;
         _itemPanel.alpha = 0;
+        _itemPanel.interactable = false;
     }
 
     private void Update()
@@ -27,11 +28,13 @@ public class PlayerUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             _itemPanel.alpha = 1;
+            _itemPanel.interactable = true; 
         }
 
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             _itemPanel.alpha = 0;
+            _itemPanel.interactable= false;
         }
     }
 

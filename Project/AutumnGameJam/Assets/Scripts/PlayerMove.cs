@@ -58,7 +58,7 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         if(_gatherables.IsGameOver()){
-            _rigidbody.useGravity = false;
+            //_rigidbody.useGravity = false;
             _rigidbody.velocity = Vector3.zero;
             return;
         }
